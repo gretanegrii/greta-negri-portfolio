@@ -1,0 +1,42 @@
+main {
+  padding-top: 7rem;
+}
+
+.about__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  max-width: 53rem;
+  margin-inline: auto;
+}
+
+.about__intro h1,
+.about__intro p {
+  font-size: 2.125rem;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  font-weight: 400;
+}
+
+.about__facts {
+  max-width: 53rem;
+  margin-inline: auto;
+  margin-top: 5rem;
+}
+
+.about__facts dt {
+  font-size: 2.125rem;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+
+.about__facts dd {
+  margin: 0;
+  margin-bottom: 1.5rem;
+  font-size: 0.75rem;
+  letter-spacing: -0.015em;
+}
+
+.about__facts dd:last-child {
+  margin-bottom: 0;
+}

@@ -1,0 +1,192 @@
+:root {
+  --color-bg: #f7f5f0;
+  --color-text: #111111;
+  --color-pink: #ff4fa3;
+  --color-pink-light: #ffd6ec;
+  --color-muted: #8a8a85;
+  --font-main: "Switzer", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --indent: 8.75rem; /* allineamento sinistro del contenuto (x140 nel Figma) */
+}
+
+@font-face {
+  font-family: "Switzer";
+  src: url("../../assets/fonts/Switzer-Regular.woff2") format("woff2");
+  font-weight: 400; /* Regular */
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Switzer";
+  src: url("../../assets/fonts/Switzer-Medium.woff2") format("woff2");
+  font-weight: 500; /* Medium */
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --- Reset --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-main);
+  margin: 20px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  background-image: radial-gradient(
+    rgba(17, 17, 17, 0.3) 0.75px,
+    transparent 0.75px
+  );
+  background-size: 34px 34px;
+  background-attachment: fixed;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+p,
+figure {
+  margin: 0;
+}
+
+::selection {
+  background-color: var(--color-pink-light);
+  color: var(--color-pink);
+}
+
+/* --- Barra metadati --- */
+.header-info {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  mix-blend-mode: difference;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.header-info p {
+  font-size: 0.5rem;
+  line-height: 1.125;
+  font-weight: 500;
+  text-transform: uppercase;
+  max-width: 15rem;
+  color: #fff;
+}
+
+/* --- Hero: impianto griglia --- */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: auto auto;
+  min-height: 100vh;
+}
+
+.hero .hero-title {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  z-index: 2;
+}
+
+.hero .hero-photo {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  z-index: 1;
+}
+
+.hero .nav-index {
+  grid-column: 1;
+  grid-row: 2;
+  margin-left: var(--indent);
+}
+
+/* --- Hero: titolo --- */
+.hero-title {
+  font-size: 3.75rem;
+  line-height: 1.016;
+  letter-spacing: -0.015em;
+  font-weight: 500;
+  margin-left: var(--indent);
+  margin-top: 3.5rem;
+  max-width: 72.5rem;
+}
+
+/* --- Hero: foto --- */
+.hero-photo {
+  width: 29.1875rem;
+  height: 38.875rem;
+  display: block;
+  margin-top: 4rem;
+}
+
+/* --- Index (label + voci) --- */
+.nav-index,
+.nav-contatti {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  margin-left: var(--indent);
+}
+
+.nav-index ul {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.nav-label {
+  font-size: 2.125rem;
+  line-height: 1.029;
+  letter-spacing: -0.015em;
+  font-weight: 400;
+  align-self: self-start;
+  justify-self: end;
+}
+
+/* --- Link di navigazione (index + contatti) --- */
+.nav-index a,
+.nav-contatti a {
+  font-size: 3.75rem;
+  line-height: 1;
+  letter-spacing: -0.015em;
+  font-weight: 500;
+  color: var(--color-text);
+  display: block;
+}
+
+.nav-contatti {
+  min-height: 100vh;
+  align-content: start;
+  padding-top: 6rem;
+}
+
+.nav-contatti ul {
+  display: flex;
+  margin-top: 2rem;
+  align-items: baseline;
+}
+
+.nav-contatti a {
+  display: inline-block;
+}
+
+.nav-contatti li:not(:last-child)::after {
+  content: " / ";
+  font-size: 4rem;
+  margin: 0 0.5rem;
+}
