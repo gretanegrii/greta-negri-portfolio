@@ -1,3 +1,8 @@
+body {
+  background-color: var(--color-pink-medium);
+  color: var(--color-pink);
+}
+
 main {
   padding-top: 7rem;
 }
@@ -6,7 +11,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 25px;
-  max-width: 53rem;
+  max-width: 95rem;
   margin-inline: auto;
 }
 
@@ -39,4 +44,52 @@ main {
 
 .about__facts dd:last-child {
   margin-bottom: 0;
+}
+
+/* --- Breadcrumb --- */
+.breadcrumb ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 0.35em;
+  margin-top: 2.5rem;
+}
+
+.breadcrumb li + li::before {
+  content: "/";
+  margin-right: 0.35em;
+}
+
+.breadcrumb {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.breadcrumb a {
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb a:hover {
+  color: var(--color-pink);
+}
+
+.breadcrumb [aria-current="page"] {
+  opacity: 0.5; /* la pagina corrente, smorzata */
+}
+
+.about__name {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* incolonna e centra: testo / foto / testo */
+  gap: 0.75rem;
+}
+
+.about__photo {
+  display: block;
+  width: 16rem; /* regola tu */
+  height: auto;
 }
