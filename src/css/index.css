@@ -33,6 +33,7 @@
 
 html {
   font-family: var(--font-main);
+  /* font-family: Arial, Helvetica, sans-serif; */
   margin: 20px;
   scroll-behavior: smooth;
 }
