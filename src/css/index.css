@@ -78,20 +78,29 @@ figure {
   left: 20px;
   right: 20px;
   z-index: 10;
-  display: flex;
-  justify-content: space-between;
   mix-blend-mode: difference;
   text-decoration: none;
   color: var(--color-text);
 }
 
 .header-info p {
+  max-width: 15rem;
+  color: #fff;
+}
+
+/* SHARED: METADATA BAR + FOOTER */
+.header-info,
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-info p,
+.footer p {
   font-size: 0.5rem;
   line-height: 1.125;
   font-weight: 500;
   text-transform: uppercase;
-  max-width: 15rem;
-  color: #fff;
 }
 
 /* --- BREADCRUMB --- */

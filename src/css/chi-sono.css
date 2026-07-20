@@ -4,11 +4,12 @@ body {
   color: var(--color-pink);
 }
 
-/* METADATI */
+/* METADATA BAR */
 .header-info {
   mix-blend-mode: normal;
 }
-.header-info p {
+.header-info p,
+.footer {
   color: var(--color-text);
 }
 
@@ -56,6 +57,7 @@ body {
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 .about__facts dt {
