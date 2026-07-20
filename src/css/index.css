@@ -1,3 +1,4 @@
+/* TOKENS */
 :root {
   --color-bg: #f7f5f0;
   --color-text: #111111;
@@ -9,6 +10,7 @@
   --indent: 8.75rem;
 }
 
+/* FONTS */
 @font-face {
   font-family: "Switzer";
   src: url("../../assets/fonts/Switzer-Regular.woff2") format("woff2");
@@ -33,7 +35,6 @@
 
 html {
   font-family: var(--font-main);
-  /* font-family: Arial, Helvetica, sans-serif; */
   margin: 20px;
   scroll-behavior: smooth;
 }
@@ -46,6 +47,7 @@ body {
     rgba(17, 17, 17, 0.3) 0.75px,
     transparent 0.75px
   );
+
   background-size: 34px 34px;
   background-attachment: fixed;
 }
@@ -69,7 +71,7 @@ figure {
   color: var(--color-pink);
 }
 
-/* --- BARRA METADATI --- */
+/* ---METADATA BAR --- */
 .header-info {
   position: fixed;
   top: 20px;
@@ -127,7 +129,7 @@ figure {
   opacity: 0.5; /* la pagina corrente, smorzata */
 }
 
-/* --- HERO --- */
+/* --- HERO LAYOUT--- */
 .hero {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -135,26 +137,26 @@ figure {
   min-height: 100vh;
 }
 
-.hero .hero-title {
+.hero .hero__title {
   grid-column: 1 / -1;
   grid-row: 1;
   z-index: 2;
 }
 
-.hero .hero-photo {
+.hero .hero__photo {
   grid-column: 2;
   grid-row: 1 / span 2;
   z-index: 1;
 }
 
-.hero .nav-index {
+.hero .nav--index {
   grid-column: 1;
   grid-row: 2;
   margin-left: var(--indent);
 }
 
-/* --- HERO: TITOLO --- */
-.hero-title {
+/* --- HERO TITLE --- */
+.hero__title {
   font-size: 3.75rem;
   line-height: 1.016;
   letter-spacing: -0.015em;
@@ -164,29 +166,22 @@ figure {
   max-width: 72.5rem;
 }
 
-/* --- HERO: FOTO --- */
-.hero-photo {
+/* --- HERO PHOTO --- */
+.hero__photo {
   width: 29.1875rem;
   height: 38.875rem;
   display: block;
   margin-top: 7rem;
 }
 
-/* --- INDEX (LABEL+VOCI) --- */
-.nav-index,
-.nav-contacts {
+/* --- NAV SHARED --- */
+.nav {
   display: grid;
   grid-template-columns: 5.5rem 1fr;
   margin-left: var(--indent);
 }
 
-.nav-index ul {
-  display: flex;
-  flex-direction: column;
-  margin-top: 2rem;
-}
-
-.nav-label {
+.nav__label {
   font-size: 2.125rem;
   line-height: 1.029;
   letter-spacing: -0.015em;
@@ -195,9 +190,7 @@ figure {
   justify-self: end;
 }
 
-/* --- INDEX + CONTATTI --- */
-.nav-index a,
-.nav-contacts a {
+.nav a {
   font-size: 3.75rem;
   line-height: 1;
   letter-spacing: -0.015em;
@@ -209,29 +202,41 @@ figure {
   display: block;
 }
 
-.nav-index a:hover,
-.nav-contacts a:hover {
+.nav a:hover {
   color: var(--color-pink);
   text-shadow: 0 0 16px rgba(255, 79, 163, 0.5);
 }
 
-.nav-contacts {
+/* --- NAV INDEX VARIANT --- */
+.hero .nav--index {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.nav--index ul {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+/* --- NAV CONTACT VARIANT --- */
+.nav--contacts {
   min-height: 100vh;
   align-content: start;
   padding-top: 6rem;
 }
 
-.nav-contacts ul {
+.nav--contacts ul {
   display: flex;
   margin-top: 2rem;
   align-items: baseline;
 }
 
-.nav-contacts a {
+.nav--contacts a {
   display: inline-block;
 }
 
-.nav-contacts li:not(:last-child)::after {
+.nav--contacts li:not(:last-child)::after {
   content: " / ";
   font-size: 4rem;
   margin: 0 0.5rem;

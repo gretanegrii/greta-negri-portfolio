@@ -1,60 +1,61 @@
-/* RESET */
+/* PAGE COLORS */
 body {
   background-color: var(--color-pink-medium);
   color: var(--color-pink);
 }
 
-main {
-  padding-top: 7rem;
+/* METADATI */
+.header-info {
+  mix-blend-mode: normal;
+}
+.header-info p {
+  color: var(--color-text);
 }
 
-/* GENERALE */
+/* MAIN */
+#chi-sono {
+  margin-top: 3rem;
+}
 
+/* NAME + INTRO */
+.about__name :is(h1, p),
 .about__intro {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5625rem;
-  max-width: 95rem;
-  margin-inline: auto;
-}
-
-.about__intro h1,
-.about__intro p {
   font-size: 2.125rem;
   line-height: 1.05;
   letter-spacing: -0.015em;
   font-weight: 400;
 }
 
-/* FOTO+TESTO */
+/* NAME + INTRO + FATCS */
+.about__name,
+.about__intro,
+.about__facts {
+  max-width: 90rem;
+  margin-inline: auto; /* centra ogni blocco */
+}
+
+/* NAME */
 .about__name {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.2rem;
+  gap: 0.5rem;
 }
 
-.about__photo {
-  display: block;
-  width: 13rem;
-  height: auto;
+/* INTRO */
+.about__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 
-/* INFO */
+/* FACTS */
 .about__facts {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
-  max-width: 95rem;
-  margin-inline: auto;
-  margin-top: 5rem;
-}
-
-.about__fact dt::before {
-  content: "[";
-}
-.about__fact dt::after {
-  content: "]";
+  margin-top: 3rem;
 }
 
 .about__facts dt {
@@ -64,12 +65,16 @@ main {
   text-transform: uppercase;
 }
 
+.about__facts dt::before {
+  content: "[";
+}
+
+.about__facts dt::after {
+  content: "]";
+}
+
 .about__facts dd {
   margin: 0;
   font-size: 1.125rem;
   letter-spacing: -0.015em;
-}
-
-.about__facts dd:last-child {
-  margin-bottom: 0;
 }
