@@ -103,3 +103,10 @@ body {
     animation-range: entry 0% entry 100%;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    animation: none;
+  }
+}
