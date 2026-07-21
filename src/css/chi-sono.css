@@ -2,6 +2,8 @@
 body {
   background-color: var(--color-pink-medium);
   color: var(--color-pink);
+  --dot-color: var(--color-text);
+  --dot-halo: rgba(17, 17, 17, 0.4);
 }
 
 /* METADATA BAR */
@@ -79,4 +81,18 @@ body {
   margin: 0;
   font-size: 1.125rem;
   letter-spacing: -0.015em;
+}
+
+/* --- REVEAL ON SCROLL --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(2rem);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }

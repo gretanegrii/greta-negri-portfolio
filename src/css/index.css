@@ -6,6 +6,8 @@
   --color-pink-light: #ffd6ec;
   --color-pink-medium: #f299c9;
   --color-muted: #8a8a85;
+  --dot-color: var(--color-pink);
+  --dot-halo: rgba(255, 79, 163, 0.5);
   --font-main: "Switzer", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --indent: 8.75rem;
 }
@@ -47,7 +49,6 @@ body {
     rgba(17, 17, 17, 0.3) 0.75px,
     transparent 0.75px
   );
-
   background-size: 34px 34px;
   background-attachment: fixed;
 }
@@ -289,26 +290,32 @@ figure {
   *::after {
     /* ...su tutti gli elementi... */
     animation: none !important; /* ...spegni le animazioni */
+    transition: none !important;
   }
 }
 
-/* --- CUSTOM CURSOR --- */
-body {
-  cursor: none; /* nasconde il cursore di sistema */
+@media (hover: hover) and (pointer: fine) {
+  .cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%; /* cerchio */
+    background: #fff;
+    mix-blend-mode: difference; /* inverte sopra ciò che c'è dietro */
+    pointer-events: none; /* ← FONDAMENTALE: non blocca i click */
+    transform: translate(-50%, -50%); /* centra il cerchio sulla punta */
+    z-index: 9999; /* sopra tutto */
+    transition:
+      width 0.25s ease,
+      height 0.25s ease;
+  }
 }
 
-.cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%; /* cerchio */
-  background: #fff;
-  mix-blend-mode: difference; /* inverte sopra ciò che c'è dietro */
-  pointer-events: none; /* ← FONDAMENTALE: non blocca i click */
-  transform: translate(-50%, -50%); /* centra il cerchio sulla punta */
-  z-index: 9999; /* sopra tutto */
+.cursor--hover {
+  width: 56px;
+  height: 56px;
 }
 
 /* --- STATUS DOT --- */
@@ -317,14 +324,45 @@ body {
   width: 0.4em;
   height: 0.4em;
   border-radius: 50%;
-  background: currentColor;
+  background: var(--dot-color);
   margin-right: 0.4em;
   vertical-align: middle;
-  animation: blink 1.2s steps(1) infinite;
+  animation: pulse 2.4s ease-out infinite;
 }
 
-@keyframes blink {
-  50% {
-    opacity: 0;
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--dot-halo);
   }
+  60% {
+    box-shadow: 0 0 0 0.7em transparent;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+/* --- PAGE TRANSITION --- */
+.page-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: var(--color-pink);
+  transform: translateY(100%);
+  pointer-events: none;
+  transition: transform 0.6s cubic-bezier(0.7, 0, 0.3, 1);
+  animation: reveal 0.6s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+@keyframes reveal {
+  from {
+    transform: translateY(0); /* copre lo schermo */
+  }
+  to {
+    transform: translateY(-100%); /* sale e se ne va, sopra */
+  }
+}
+
+.page-transition.is-active {
+  transform: translateY(0);
 }
