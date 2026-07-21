@@ -232,7 +232,7 @@ figure {
 /* --- NAV CONTACT VARIANT --- */
 .nav--contacts {
   min-height: 100vh;
-  align-content: start;
+  align-items: start;
   padding-top: 6rem;
 }
 
@@ -291,6 +291,9 @@ figure {
     /* ...su tutti gli elementi... */
     animation: none !important; /* ...spegni le animazioni */
     transition: none !important;
+  }
+  .reveal-load {
+    opacity: 1;
   }
 }
 
