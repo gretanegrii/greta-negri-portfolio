@@ -71,6 +71,3 @@ navLinks.forEach((link) => {
     }, 600);
   });
 });
-
-// REVEAL ON SCROLL
-const reveals = document.querySelectorAll(".reveal");
