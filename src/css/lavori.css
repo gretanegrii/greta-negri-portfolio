@@ -113,3 +113,58 @@ main {
 .works__row:nth-child(4) {
   animation-delay: 0.4s;
 }
+
+/* ============================================================= */
+/* --- RESPONSIVE (desktop-first) --- */
+/* ============================================================= */
+
+/* --- TABLET: sotto i 900px --- */
+@media (max-width: 900px) {
+  .works__title h1 {
+    font-size: 6rem; /* da 170px a ~96px */
+  }
+  .works {
+    margin-top: 5rem;
+  }
+
+  /* RIGA: da 5 colonne fisse a 2 colonne, con il nome su riga intera */
+  .works__row {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem 1.5rem;
+  }
+  .works__name {
+    grid-column: 1 / -1;
+  }
+}
+
+/* --- MOBILE: sotto i 600px --- */
+@media (max-width: 600px) {
+  .works__title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  .works__title h1 {
+    font-size: 3.5rem;
+  }
+  .works {
+    margin-top: 3rem;
+  }
+
+  /* RIGA: tutto in colonna, come una scheda; il nome va in cima */
+  .works__row {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+    padding: 1.25rem 20px;
+  }
+  .works__name {
+    order: -1;
+    font-size: 1.25rem;
+  }
+
+  /* niente thumbnail su touch: l'hover non esiste, resterebbe invisibile */
+  .works__thumb {
+    display: none;
+  }
+}

@@ -110,3 +110,37 @@ body {
     animation: none;
   }
 }
+
+/* ============================================================= */
+/* --- RESPONSIVE (desktop-first) --- */
+/* ============================================================= */
+
+/* --- TABLET: sotto i 900px --- */
+@media (max-width: 900px) {
+  /* FATTI: da 4 colonne a 2 */
+  .about__facts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --- MOBILE: sotto i 600px --- */
+@media (max-width: 600px) {
+  /* testo più piccolo per nome, intro e titoli-fatto */
+  .about__name :is(h1, p),
+  .about__intro,
+  .about__facts dt {
+    font-size: 1.5rem;
+  }
+
+  /* la foto non sfonda mai */
+  .about__photo {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* FATTI: una sola colonna */
+  .about__facts {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}

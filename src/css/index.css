@@ -369,3 +369,105 @@ figure {
 .page-transition.is-active {
   transform: translateY(0);
 }
+
+/* ============================================================= */
+/* --- RESPONSIVE (desktop-first: si applica SOTTO le soglie) --- */
+/* ============================================================= */
+
+/* --- TABLET: sotto i 900px --- */
+@media (max-width: 900px) {
+  :root {
+    --indent: 3rem; /* meno margine di rientro su schermo medio */
+  }
+
+  /* BARRA METADATA + FOOTER: vanno a capo invece di schiacciarsi */
+  .header-info,
+  .footer {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0.35rem 1.5rem;
+  }
+
+  /* HERO: da 3 colonne a colonna singola (titolo → foto → nav) */
+  .hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    min-height: auto;
+    gap: 2rem;
+  }
+  .hero .hero__title {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 2.75rem;
+    margin-top: 7rem;
+    max-width: 100%;
+  }
+  .hero .hero__photo {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    max-width: 22rem;
+    height: auto;
+    margin-top: 0;
+  }
+  .hero .nav--index {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  /* NAV: dimensioni più contenute */
+  .nav a {
+    font-size: 2.75rem;
+  }
+  .nav__label {
+    font-size: 1.5rem;
+  }
+
+  /* CONTATTI: mandano a capo invece di sfondare */
+  .nav--contacts {
+    min-height: auto;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  .nav--contacts ul {
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
+  }
+}
+
+/* --- MOBILE: sotto i 600px --- */
+@media (max-width: 600px) {
+  :root {
+    --indent: 0rem; /* il rientro sparisce, resta il margine di 20px dell'html */
+  }
+
+  .header-info p {
+    max-width: none; /* liberi di occupare la riga quando vanno a capo */
+  }
+
+  /* HERO */
+  .hero .hero__title {
+    font-size: 2.125rem;
+    margin-top: 8rem; /* lascia spazio alla barra metadata che va a capo */
+  }
+  .hero .hero__photo {
+    max-width: 100%;
+  }
+
+  /* NAV: label sopra, voci sotto */
+  .nav {
+    grid-template-columns: 1fr;
+  }
+  .nav__label {
+    justify-self: start;
+    margin-bottom: 0.5rem;
+  }
+  .nav a {
+    font-size: 2.125rem;
+  }
+
+  /* CONTATTI: separatori "/" più piccoli, coerenti col testo ridotto */
+  .nav--contacts li:not(:last-child)::after {
+    font-size: 2.125rem;
+  }
+}
