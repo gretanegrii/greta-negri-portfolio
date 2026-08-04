@@ -56,7 +56,7 @@ body {
 /* FACTS */
 .about__facts {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 2rem;
   margin-top: 3rem;
   margin-bottom: 3rem;
