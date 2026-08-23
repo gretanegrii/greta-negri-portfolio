@@ -8,7 +8,12 @@
     <title>Greta Negri — in costruzione</title>
 
     <style>
+      html {
+        margin: 0;
+      }
+
       body {
+        margin: 0;
         background-color: var(--color-pink-medium);
         color: var(--color-pink);
         font-weight: 500;
@@ -16,34 +21,45 @@
 
       div {
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
+        gap: 3rem;
         min-height: 100vh;
+        text-align: center;
+      }
+
+      .contatti {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
 
       h1 {
-        font-size: 8rem;
+        font-size: 3rem;
         letter-spacing: -0.015em;
         line-height: 1.1;
       }
 
+      img {
+        width: 10%;
+      }
       .contatti a {
-        color: var(--color-text);
-
-        transition: color 0.2s ease;
+        color: var(--color-pink);
+        transition: text-shadow 0.2s ease;
       }
 
       .contatti a:hover {
-        color: var(--color-pink);
-      }
-
-      .contatti [aria-current="page"] {
-        opacity: 0.5; /* la pagina corrente, smorzata */
+        text-shadow: 0 0 16px rgba(255, 255, 255, 0.8);
       }
 
       @media (max-width: 600px) {
         h1 {
           font-size: 2rem;
+        }
+
+        img {
+          width: 30%;
         }
       }
     </style>
@@ -51,7 +67,11 @@
 
   <body>
     <div>
-      <h1>Greta Negri — in costruzione &lt;3 &lt;3</h1>
+      <h1>
+        Greta Negri <br />
+        in costruzione &lt;3 &lt;3
+      </h1>
+      <img src="./assets/img/index-photo.png" alt="" />
       <p class="contatti">
         <a href="mailto:gretanegri.dev@gmail.com">email</a>
         <a
