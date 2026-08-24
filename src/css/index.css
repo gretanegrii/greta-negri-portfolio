@@ -371,7 +371,13 @@ figure {
 /* --- RESPONSIVE (desktop-first: si applica SOTTO le soglie) --- */
 /* ============================================================= */
 @media (max-width: 600px) {
-  .hero__title {
-    font-size: 1rem;
+  .footer,
+  .nav__label {
+    display: none;
+  }
+
+  .nav--index ul {
+    align-items: center;
+    text-align: center;
   }
 }
