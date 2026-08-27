@@ -14,11 +14,10 @@
     <link rel="icon" type="image/png" href="./assets/img/favicon.png" />
     <link rel="apple-touch-icon" href="./assets/img/apple-touch-icon.png" />
 
-    <!-- Open Graph (WhatsApp, LinkedIn, Telegram, Substack) -->
     <meta property="og:type" content="website" />
     <meta
       property="og:url"
-      content="https://portfolio-gretanegri.vercel.app/chi-sono.html"
+      content="https://portfolio-gretanegri.vercel.app/about.html"
     />
     <meta property="og:title" content="Chi sono — Greta Negri" />
     <meta
@@ -45,12 +44,11 @@
       crossorigin
     />
 
-    <link rel="stylesheet" href="./src/css/index.css" />
-    <link rel="stylesheet" href="./src/css/chi-sono.css" />
+    <link rel="stylesheet" href="./src/css/base.css" />
+    <link rel="stylesheet" href="./src/css/about.css" />
   </head>
 
   <body>
-    <div class="page-transition" aria-hidden="true"></div>
     <header>
       <p lang="en">
         Greta Negri is a front-end developer with a background in graphic design
@@ -70,12 +68,11 @@
       </ol>
     </nav>
 
-    <main class="about" id="chi-sono">
+    <main class="about">
       <!-- NAME + PHOTO -->
       <div class="about__name reveal">
         <h1>Greta Negri</h1>
         <img
-          class="about__photo"
           src="./assets/img/about-photo.png"
           alt="Ritratto di Greta Negri"
           width="260"
@@ -115,18 +112,18 @@
       <!-- FACTS -->
       <dl class="about__facts">
         <div class="reveal">
-          <dt>FORMAZIONE</dt>
+          <dt>Formazione</dt>
           <dd>Graphic Design &amp; Art Direction — NABA, Milano.</dd>
         </div>
         <div class="reveal">
-          <dt>LINGUE</dt>
+          <dt>Lingue</dt>
           <dd>Italiano — (madrelingua)</dd>
           <dd>Inglese — B2 (Ielts, 2024)</dd>
           <dd>Francese — B2 (Esabac, 2023)</dd>
           <dd>Spagnolo — B1</dd>
         </div>
         <div class="reveal">
-          <dt>STRUMENTI</dt>
+          <dt>Strumenti</dt>
           <dd>Figma</dd>
           <dd>HTML · CSS</dd>
           <dd>JavaScript (in corso)</dd>
@@ -134,17 +131,19 @@
           <dd>Photoshop · Illustrator · InDesign</dd>
         </div>
         <div class="reveal">
-          <dt>STATUS</dt>
+          <dt>Status</dt>
           <dd>Disponibile da subito.</dd>
         </div>
       </dl>
     </main>
+
     <footer>
       <p lang="en">Built with HTML, CSS &amp; JavaScript</p>
-      <p lang="en">Typeface: Switzer</p>
       <p>© 2026 Greta Negri</p>
+      <p lang="en">Typeface: Switzer</p>
     </footer>
     <div class="cursor" aria-hidden="true"></div>
+
     <script src="./src/js/main.js"></script>
   </body>
 </html>

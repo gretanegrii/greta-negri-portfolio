@@ -1,0 +1,55 @@
+/* =========================================================
+   CONTACT — minimal, testi grossi (ispirato a strgl)
+   La base (token, font, header, footer, breadcrumb) sta in base.css.
+   ========================================================= */
+
+/* pagina alta quanto lo schermo: manifesto in alto, contatti in fondo, niente scroll */
+body {
+  min-height: calc(100vh - 40px); /* -40px = i margini 20px+20px dell'html */
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; /* riempie tra breadcrumb e footer */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+}
+
+/* -------------------------------------------MANIFESTO------------------------------------------- */
+.contact-intro {
+  font-size: clamp(2rem, 1rem + 4vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  font-weight: 500;
+  max-width: 22ch;
+}
+
+/* -------------------------------------------LINKS------------------------------------------- */
+.contact {
+  font-style: normal; /* <address> è corsivo di default: lo spengo */
+}
+
+.contact ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact a {
+  display: inline-block;
+  font-size: clamp(1.35rem, 0.6rem + 2.6vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  font-weight: 500;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact a:hover {
+  color: var(--color-pink);
+}

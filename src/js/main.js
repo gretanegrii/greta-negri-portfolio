@@ -56,18 +56,3 @@ links.forEach((link) => {
   link.addEventListener("mouseenter", () => cursor.classList.add("cursor--hover"));
   link.addEventListener("mouseleave", () => cursor.classList.remove("cursor--hover"));
 });
-
-// PAGE TRANSITION
-const overlay = document.querySelector(".page-transition");
-const navLinks = document.querySelectorAll('a[href$=".html"]');
-
-navLinks.forEach((link) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-    const destination = link.href;
-    overlay.classList.add("is-active");
-    setTimeout(() => {
-      window.location.href = destination;
-    }, 600);
-  });
-});

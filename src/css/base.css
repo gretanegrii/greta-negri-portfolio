@@ -1,0 +1,210 @@
+/* -------------------------------------------TOKENS------------------------------------------- */
+:root {
+  --color-bg: #f7f5f0;
+  --color-text: #111111;
+  --color-pink: #ff4fa3;
+  --color-pink-light: #ffd6ec;
+  --color-pink-medium: #f299c9;
+  --dot-color: var(--color-pink);
+  --dot-halo: rgba(255, 79, 163, 0.5);
+  --font-main: "Switzer", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --indent: 8.75rem;
+}
+
+/* -------------------------------------------FONTS------------------------------------------- */
+@font-face {
+  font-family: "Switzer";
+  src: url("../../assets/fonts/Switzer-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Switzer";
+  src: url("../../assets/fonts/Switzer-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* -------------------------------------------RESET------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-main);
+  margin: 20px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  background-image: radial-gradient(
+    rgba(17, 17, 17, 0.3) 0.75px,
+    transparent 0.75px
+  );
+  background-size: 34px 34px;
+  background-attachment: fixed;
+}
+
+.link-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+p,
+figure {
+  margin: 0;
+}
+
+/* stile del testo quando lo seleziono */
+::selection {
+  background-color: var(--color-pink-light);
+  color: var(--color-pink);
+}
+
+/* --------------------------------------METADATA + FOOTER------------------------------------- */
+header,
+footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+header p,
+footer p {
+  font-size: 0.5rem;
+  line-height: 1.125;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* ---------------------------------------METADATA BAR--------------------------------------- */
+header {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  z-index: 10;
+  color: var(--color-text);
+}
+
+header p {
+  max-width: 15rem;
+  color: var(--color-text);
+}
+
+/* -------------------------------------------BREADCRUMB------------------------------------------- */
+.breadcrumb ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 0.35em;
+  margin-top: 2.5rem;
+}
+
+.breadcrumb li + li::before {
+  content: "/";
+  margin-right: 0.35em;
+}
+
+.breadcrumb {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.breadcrumb a {
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb a:hover {
+  color: var(--color-pink);
+}
+
+/* -------------------------------------------CURSORE------------------------------------------- */
+@media (hover: hover) and (pointer: fine) {
+  .cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%; /* cerchio */
+    background: #fff;
+    mix-blend-mode: difference; /* inverte sopra ciò che c'è dietro */
+    pointer-events: none; /* ← FONDAMENTALE: non blocca i click */
+    transform: translate(-50%, -50%); /* centra il cerchio sulla punta */
+    z-index: 9999; /* sopra tutto */
+    transition:
+      width 0.25s ease,
+      height 0.25s ease;
+  }
+}
+
+.cursor--hover {
+  width: 56px;
+  height: 56px;
+}
+
+/* -------------------------------------------STATUS DOT------------------------------------------- */
+.dot {
+  display: inline-block;
+  width: 0.4em;
+  height: 0.4em;
+  border-radius: 50%;
+  background: var(--dot-color);
+  margin-right: 0.4em;
+  vertical-align: middle;
+  animation: pulse 2.4s ease-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--dot-halo);
+  }
+  60% {
+    box-shadow: 0 0 0 0.7em transparent;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+/* ---------------------------------- MOTION OFF (globale) ---------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  /* SE l'utente vuole meno movimento... */
+  *,
+  *::before,
+  *::after {
+    animation: none !important; /* ...spegni le animazioni */
+    transition: none !important;
+  }
+  .reveal-load {
+    opacity: 1;
+  }
+}
+
+/* ------------------------- HEADER RESPONSIVE (vale su tutte le pagine) ------------------------- */
+@media (max-width: 1024px) {
+  header {
+    position: static;
+  }
+}
+
+@media (max-width: 600px) {
+  header p:nth-child(n + 3) {
+    display: none;
+  }
+}

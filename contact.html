@@ -3,12 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f7f5f0" />
-    <title>Greta Negri — Front-end Developer</title>
+    <title>Contatti — Greta Negri</title>
 
     <meta
       name="description"
-      content="Portfolio di Greta Negri — front-end developer con background in graphic design e art direction, a Milano. Disegno interfacce e le scrivo in codice."
+      content="Contatti di Greta Negri — front-end developer con background in graphic design, a Milano. CV, GitHub, LinkedIn ed email."
     />
     <meta name="author" content="Greta Negri" />
 
@@ -18,12 +17,12 @@
     <meta property="og:type" content="website" />
     <meta
       property="og:url"
-      content="https://portfolio-gretanegri.vercel.app/"
+      content="https://portfolio-gretanegri.vercel.app/contact.html"
     />
-    <meta property="og:title" content="Greta Negri — Front-end Developer" />
+    <meta property="og:title" content="Contatti — Greta Negri" />
     <meta
       property="og:description"
-      content="Disegno interfacce e poi le scrivo in codice. Front-end developer con background in graphic design, a Milano."
+      content="Come raggiungermi: CV, GitHub, LinkedIn ed email. Front-end developer con background in graphic design, a Milano."
     />
     <meta
       property="og:image"
@@ -46,7 +45,7 @@
     />
 
     <link rel="stylesheet" href="./src/css/base.css" />
-    <link rel="stylesheet" href="./src/css/index.css" />
+    <link rel="stylesheet" href="./src/css/contact.css" />
   </head>
 
   <body>
@@ -62,31 +61,46 @@
       </p>
     </header>
 
-    <main>
-      <div class="hero">
-        <h1>
-          Greta Negri<span class="hero__tagline"
-            >Disegno interfacce e poi le scrivo in codice.</span
-          >
-        </h1>
-        <img
-          src="./assets/img/index-photo.png"
-          alt="Ritratto di Greta Negri"
-          width="640"
-          height="864"
-        />
+    <nav class="breadcrumb" aria-label="Percorso">
+      <ol>
+        <li><a href="./index.html">Home</a></li>
+        <li aria-current="page">Contatti</li>
+      </ol>
+    </nav>
 
-        <nav class="link-list link-list--index" aria-label="Index">
-          <p class="link-list__label">Index:</p>
-          <ul>
-            <li><a href="about.html">Chi sono</a></li>
-            <li>
-              <a href="work.html">Lavori<sup>(2)</sup></a>
-            </li>
-            <li><a href="contact.html">Contatti</a></li>
-          </ul>
-        </nav>
-      </div>
+    <main>
+      <h1 class="contact-intro">
+        Cerco uno stage o un apprendistato dove imparare sul campo. Scrivimi.
+      </h1>
+
+      <address class="contact" id="contacts">
+        <ul>
+          <li>
+            <a href="./assets/docs/cv.pdf" target="_blank" rel="noopener">CV</a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/gretanegrii"
+              target="_blank"
+              rel="noopener"
+              >github.com/gretanegrii</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://linkedin.com/in/gretanegri"
+              target="_blank"
+              rel="noopener"
+              >linkedin.com/in/gretanegri</a
+            >
+          </li>
+          <li>
+            <a href="mailto:gretanegri.dev@gmail.com"
+              >gretanegri.dev@gmail.com</a
+            >
+          </li>
+        </ul>
+      </address>
     </main>
 
     <footer>

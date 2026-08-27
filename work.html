@@ -14,11 +14,10 @@
     <link rel="icon" type="image/png" href="./assets/img/favicon.png" />
     <link rel="apple-touch-icon" href="./assets/img/apple-touch-icon.png" />
 
-    <!-- Open Graph (WhatsApp, LinkedIn, Telegram, Substack) -->
     <meta property="og:type" content="website" />
     <meta
       property="og:url"
-      content="https://portfolio-gretanegri.vercel.app/lavori.html"
+      content="https://portfolio-gretanegri.vercel.app/work.html"
     />
     <meta property="og:title" content="Lavori — Greta Negri" />
     <meta
@@ -45,16 +44,15 @@
       crossorigin
     />
 
-    <link rel="stylesheet" href="./src/css/index.css" />
-    <link rel="stylesheet" href="./src/css/lavori.css" />
+    <link rel="stylesheet" href="./src/css/base.css" />
+    <link rel="stylesheet" href="./src/css/work.css" />
   </head>
 
   <body>
-    <div class="page-transition" aria-hidden="true"></div>
     <header>
       <p lang="en">
         Greta Negri is a front-end developer with a background in graphic design
-        and art direction.
+        and art direction
       </p>
       <p lang="en">Based in Milan, Italy</p>
       <p>dev_portfolio / v.1.0</p>
@@ -71,21 +69,22 @@
     </nav>
 
     <main>
-      <section class="works__title">
+      <div class="works__title">
         <h1>Lavori</h1>
         <div class="works__tag">
           <p>Figma</p>
           <p>HTML·CSS·JS</p>
         </div>
-      </section>
+      </div>
 
+      <!-- MANCA L'ALT!!!!!!!!!!!!!!!!!!!!!! -->
       <ul class="works">
         <li class="works__row">
           <span>Studio di tatuaggi</span>
-          <span class="works__name">Save Tattoo</span>
+          <h2 class="works__name">Save Tattoo</h2>
           <span>UI/UX, Development, Branding</span>
           <span>2026</span>
-          <a href="#">vedi progetto &rarr;</a>
+          <a href="./progetti/save-tattoo.html">Vedi progetto &rarr;</a>
           <img
             class="works__thumb"
             src="./assets/img/prova_thumbnail.png"
@@ -95,52 +94,29 @@
 
         <li class="works__row">
           <span>Sito per un'artista</span>
-          <span class="works__name">Martina Redaelli</span>
+          <h2 class="works__name">Martina Redaelli</h2>
           <span>Art Direction, UI/UX, Development</span>
           <span>2026</span>
-          <a href="#">vedi progetto &rarr;</a>
+          <a href="./progetti/martina-redaelli-portfolio.html"
+            >Vedi progetto &rarr;</a
+          >
           <img
             class="works__thumb"
             src="./assets/img/prova_thumbnail.png"
             alt=""
           />
         </li>
-
-        <!-- <li class="works__row">
-          <span>Concept di rebrand</span>
-          <span class="works__name">Letterboxd</span>
-          <span>Branding, UI Design</span>
-          <span>2026</span>
-          <a href="#">vedi progetto &rarr;</a>
-          <img
-            class="works__thumb"
-            src="./assets/img/prova_thumbnail.png"
-            alt=""
-          />
-        </li>
-
-        <li class="works__row">
-          <span>Esperimento in codice</span>
-          <span class="works__name">[nome gioco]</span>
-          <span>Development, Creative Coding</span>
-          <span>2026</span>
-          <a href="#">vedi progetto &rarr;</a>
-          <img
-            class="works__thumb"
-            src="./assets/img/prova_thumbnail.png"
-            alt=""
-          />
-        </li> -->
       </ul>
     </main>
 
     <footer>
       <p lang="en">Built with HTML, CSS &amp; JavaScript</p>
-      <p lang="en">Typeface: Switzer</p>
       <p>© 2026 Greta Negri</p>
+      <p lang="en">Typeface: Switzer</p>
     </footer>
 
     <div class="cursor" aria-hidden="true"></div>
+
     <script src="./src/js/main.js"></script>
   </body>
 </html>

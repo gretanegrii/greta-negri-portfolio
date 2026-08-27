@@ -1,4 +1,3 @@
-/* PAGE COLORS */
 body {
   background-color: var(--color-pink-medium);
   color: var(--color-pink);
@@ -6,21 +5,20 @@ body {
   --dot-halo: rgba(17, 17, 17, 0.4);
 }
 
-/* METADATA BAR */
-.header-info {
-  mix-blend-mode: normal;
-}
-.header-info p,
-.footer {
-  color: var(--color-text);
-}
-
-/* MAIN */
-#chi-sono {
+/* -------------------------------------------MAIN------------------------------------------- */
+.about {
   margin-top: 3rem;
 }
 
-/* NAME + INTRO */
+/* -------------------------------------------LAYOUT------------------------------------------- */
+.about__name,
+.about__intro,
+.about__facts {
+  max-width: 90rem;
+  margin-inline: auto;
+}
+
+/* -------------------------------------------NAME + PHOTO------------------------------------------- */
 .about__name :is(h1, p),
 .about__intro {
   font-size: 2.125rem;
@@ -29,15 +27,6 @@ body {
   font-weight: 400;
 }
 
-/* NAME + INTRO + FACTS */
-.about__name,
-.about__intro,
-.about__facts {
-  max-width: 90rem;
-  margin-inline: auto; /* centra ogni blocco */
-}
-
-/* NAME */
 .about__name {
   display: flex;
   flex-direction: column;
@@ -45,7 +34,7 @@ body {
   gap: 0.5rem;
 }
 
-/* INTRO */
+/* -------------------------------------------INTRO TEXT------------------------------------------- */
 .about__intro {
   display: flex;
   flex-direction: column;
@@ -53,7 +42,7 @@ body {
   margin-top: 1.5rem;
 }
 
-/* FACTS */
+/* -------------------------------------------FACTS------------------------------------------- */
 .about__facts {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -83,62 +72,40 @@ body {
   letter-spacing: -0.015em;
 }
 
-/* --- REVEAL ON SCROLL --- */
-@keyframes reveal-scroll {
-  from {
-    opacity: 0;
-    transform: translateY(2rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@supports (animation-timeline: view()) {
-  .reveal {
-    opacity: 0;
-    animation: reveal-scroll linear both;
-    animation-timeline: view();
-    animation-range: entry 0% entry 100%;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .reveal {
-    opacity: 1;
-    animation: none;
-  }
+/* -------------------------------------------FOOTER------------------------------------------- */
+footer p {
+  color: var(--color-text);
 }
 
 /* ============================================================= */
 /* --- RESPONSIVE (desktop-first) --- */
 /* ============================================================= */
 
-/* --- TABLET: sotto i 900px --- */
+/* -------------------------------------------TABLET------------------------------------------- */
 @media (max-width: 900px) {
-  /* FATTI: da 4 colonne a 2 */
   .about__facts {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .about__name img {
+    width: 30%;
+    height: auto;
+  }
 }
 
-/* --- MOBILE: sotto i 600px --- */
+/* -------------------------------------------MOBILE------------------------------------------- */
 @media (max-width: 600px) {
-  /* testo più piccolo per nome, intro e titoli-fatto */
   .about__name :is(h1, p),
   .about__intro,
   .about__facts dt {
     font-size: 1.5rem;
   }
 
-  /* la foto non sfonda mai */
   .about__photo {
     max-width: 100%;
     height: auto;
   }
 
-  /* FATTI: una sola colonna */
   .about__facts {
     grid-template-columns: 1fr;
     gap: 1.5rem;
