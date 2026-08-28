@@ -49,19 +49,29 @@
   justify-self: end;
 }
 
-.link-list a {
+.link-list a,
+.link-list button {
+  font-family: inherit;
+  text-transform: inherit;
   font-size: 3.75rem;
   line-height: 1;
   letter-spacing: -0.015em;
   font-weight: 500;
   color: var(--color-text);
+  text-decoration: underline;
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
   transition:
     color 0.2s ease,
     text-shadow 0.2s ease;
   display: block;
 }
 
-.link-list a:hover {
+.link-list a:hover,
+.link-list button:hover {
   color: var(--color-pink);
   text-shadow: 0 0 16px rgba(255, 79, 163, 0.5);
 }
@@ -108,6 +118,80 @@
 }
 .hero img {
   animation-delay: 0.35s;
+}
+
+/* -------------------------------------------OVERLAY CONTACT------------------------------------------- */
+.contact-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: var(--color-pink-medium);
+  color: var(--color-pink);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 4rem 2rem 2.5rem;
+  transform: translateY(100%); /* nascosto sotto lo schermo */
+  transition: transform 0.6s cubic-bezier(0.7, 0, 0.3, 1);
+  overflow-y: auto;
+}
+
+.contact-overlay.is-open {
+  transform: translateY(0); /* sale in vista */
+}
+
+.contact-overlay__close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  border: none;
+  background: none;
+  color: inherit;
+  font-family: inherit; /* il button non eredita il font */
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: text-shadow 0.2s ease;
+}
+
+/* hover: si illumina come i link */
+.contact-overlay__close:hover {
+  text-shadow: 0 0 16px var(--color-pink-light);
+}
+
+.contact-overlay__intro {
+  font-size: clamp(2rem, 1rem + 4vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  font-weight: 500;
+  max-width: 30ch;
+}
+
+.contact-overlay .contact {
+  font-style: normal; /* <address> non è corsivo */
+}
+
+.contact-overlay .contact ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-overlay .contact a {
+  display: inline-block;
+  font-size: clamp(1.35rem, 0.6rem + 2.6vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  font-weight: 500;
+  color: inherit;
+  text-decoration: underline;
+  transition: text-shadow 0.2s ease;
+}
+
+.contact-overlay .contact a:hover {
+  text-shadow: 0 0 16px var(--color-pink-light);
 }
 
 /* ============================================================= */
@@ -162,7 +246,8 @@
     margin-left: 0;
   }
 
-  .link-list a {
+  .link-list a,
+  .link-list button {
     font-size: clamp(1rem, 0.52rem + 2.04vw, 1.5rem);
   }
 

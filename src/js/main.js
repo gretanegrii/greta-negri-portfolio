@@ -19,40 +19,64 @@ function animateCursor() {
 animateCursor();
 
 
-// THUMBNAIL LAVORI
-const rows = document.querySelectorAll(".works__row");
-
-rows.forEach((row) => {
-  const thumb = row.querySelector(".works__thumb");
-  if (!thumb) return;
-
-  let targetX = 0, targetY = 0;
-  let currentX = 0, currentY = 0;
-
-  row.addEventListener("mouseenter", (e) => {
-    const rect = row.getBoundingClientRect();
-    targetX = currentX = e.clientX - rect.left;
-    targetY = currentY = e.clientY - rect.top;
-  });
-
-  row.addEventListener("mousemove", (e) => {
-    const rect = row.getBoundingClientRect();
-    targetX = e.clientX - rect.left;
-    targetY = e.clientY - rect.top;
-  });
-
-  function animate() {
-    currentX += (targetX - currentX) * 0.1;
-    currentY += (targetY - currentY) * 0.1;
-    thumb.style.transform = `translate(${currentX + 20}px, calc(${currentY}px - 50%))`;
-    requestAnimationFrame(animate);
-  }
-  animate();
-});
-
 const links = document.querySelectorAll("a");
 
 links.forEach((link) => {
   link.addEventListener("mouseenter", () => cursor.classList.add("cursor--hover"));
   link.addEventListener("mouseleave", () => cursor.classList.remove("cursor--hover"));
+});
+
+
+// CONTACT OVERLAY — apre il pannello fucsia dal link "Contatti" del menu
+const contactTrigger = document.querySelector(".link-list--index button");
+const contactOverlay = document.querySelector(".contact-overlay");
+
+if (contactTrigger && contactOverlay) {
+  const contactClose = contactOverlay.querySelector(".contact-overlay__close");
+
+  function openContact() {
+    contactOverlay.classList.add("is-open");
+    contactOverlay.setAttribute("aria-hidden", "false");
+    contactClose.focus();
+  }
+
+  function closeContact() {
+    contactOverlay.classList.remove("is-open");
+    contactOverlay.setAttribute("aria-hidden", "true");
+  }
+
+  contactTrigger.addEventListener("click", openContact);
+  contactClose.addEventListener("click", closeContact);
+
+  // chiudi con il tasto Esc
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeContact();
+  });
+}
+
+
+// WORK ACCORDION — apre/chiude le strisce progetto (una alla volta)
+const workItems = document.querySelectorAll(".work-item");
+
+workItems.forEach((item) => {
+  const head = item.querySelector(".work-item__head");
+  const toggle = item.querySelector(".work-item__toggle");
+
+  head.addEventListener("click", () => {
+    const wasOpen = item.classList.contains("is-open");
+
+    // chiudi tutte (apertura singola)
+    workItems.forEach((other) => {
+      other.classList.remove("is-open");
+      other
+        .querySelector(".work-item__toggle")
+        .setAttribute("aria-expanded", "false");
+    });
+
+    // se non era già aperta, aprila
+    if (!wasOpen) {
+      item.classList.add("is-open");
+      toggle.setAttribute("aria-expanded", "true");
+    }
+  });
 });

@@ -83,7 +83,7 @@
             <li>
               <a href="work.html">Lavori<sup>(2)</sup></a>
             </li>
-            <li><a href="contact.html">Contatti</a></li>
+            <li><button type="button">Contatti</button></li>
           </ul>
         </nav>
       </div>
@@ -94,6 +94,55 @@
       <p>© 2026 Greta Negri</p>
       <p lang="en">Typeface: Switzer</p>
     </footer>
+    <!-- OVERLAY CONTATTI (si apre dal menu, sale dal basso) -->
+    <div
+      class="contact-overlay"
+      id="contact-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Contatti"
+      aria-hidden="true"
+    >
+      <button
+        class="contact-overlay__close"
+        type="button"
+        aria-label="Chiudi contatti"
+      >
+        chiudi
+      </button>
+
+      <h2 class="contact-overlay__intro">
+        Cerco uno stage o un apprendistato dove imparare sul campo. Scrivimi.
+      </h2>
+
+      <address class="contact">
+        <ul>
+          <li>
+            <a href="./assets/docs/cv.pdf" target="_blank" rel="noopener">CV</a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/gretanegrii"
+              target="_blank"
+              rel="noopener"
+              >github.com/gretanegrii</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://linkedin.com/in/gretanegri"
+              target="_blank"
+              rel="noopener"
+              >linkedin.com/in/gretanegri</a
+            >
+          </li>
+          <li>
+            <a href="mailto:gretanegri.dev@gmail.com">gretanegri.dev@gmail.com</a>
+          </li>
+        </ul>
+      </address>
+    </div>
+
     <div class="cursor" aria-hidden="true"></div>
 
     <script src="./src/js/main.js"></script>

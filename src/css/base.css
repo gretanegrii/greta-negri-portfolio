@@ -2,9 +2,9 @@
 :root {
   --color-bg: #f7f5f0;
   --color-text: #111111;
-  --color-pink: #ff4fa3;
+  --color-pink: #f148a3;
   --color-pink-light: #ffd6ec;
-  --color-pink-medium: #f299c9;
+  --color-pink-medium: #f19ac9;
   --dot-color: var(--color-pink);
   --dot-halo: rgba(255, 79, 163, 0.5);
   --font-main: "Switzer", "Helvetica Neue", Helvetica, Arial, sans-serif;
