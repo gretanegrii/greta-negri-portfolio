@@ -10,6 +10,24 @@ body {
   margin-top: 3rem;
 }
 
+/* -------------------------------------------ENTRANCE (cascata)------------------------------------------- */
+/* .reveal porta già l'animazione "rise" da base.css: qui aggiungo solo i ritardi */
+.about__name {
+  animation-delay: 0.05s;
+}
+.about__facts > div:nth-child(1) {
+  animation-delay: 0.15s;
+}
+.about__facts > div:nth-child(2) {
+  animation-delay: 0.25s;
+}
+.about__facts > div:nth-child(3) {
+  animation-delay: 0.35s;
+}
+.about__facts > div:nth-child(4) {
+  animation-delay: 0.45s;
+}
+
 /* -------------------------------------------LAYOUT------------------------------------------- */
 .about__name,
 .about__intro,

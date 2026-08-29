@@ -1,3 +1,67 @@
+// SMOOTH SCROLL (Lenis) — scroll morbido con inerzia, come lamalama
+// rispetta chi ha chiesto "meno animazioni" nelle impostazioni di sistema
+const prefersReducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)",
+).matches;
+
+if (typeof Lenis !== "undefined" && !prefersReducedMotion) {
+  const lenis = new Lenis({
+    duration: 1.2, // durata dello scivolamento: più alto = più "lungo"
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // decelerazione morbida
+  });
+
+  // Lenis ha bisogno di essere "risvegliato" a ogni frame
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+}
+
+// TESTO ACCESO ALLO SCROLL (#4) — le parole di .reveal-text prendono colore scorrendo
+const revealTexts = document.querySelectorAll(".reveal-text");
+
+if (revealTexts.length && !prefersReducedMotion) {
+  const esc = (s) =>
+    s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+  // 1) spezza ogni frase in parole avvolte in <span class="word">
+  revealTexts.forEach((el) => {
+    const words = el.textContent.trim().split(/\s+/);
+    el.innerHTML = words
+      .map((w) => `<span class="word">${esc(w)}</span>`)
+      .join(" ");
+    el._words = el.querySelectorAll(".word"); // le parole di questa frase
+  });
+
+  // 2) accende le parole in ordine, in base a quanto la frase ha "attraversato" la linea
+  function lightWords() {
+    const line = window.innerHeight * 0.8; // linea di accensione (80% dello schermo)
+    revealTexts.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      let progress = (line - rect.top) / rect.height; // 0 → 1
+      progress = Math.max(0, Math.min(1, progress));
+      const lit = Math.round(progress * el._words.length);
+      el._words.forEach((w, i) => w.classList.toggle("is-lit", i < lit));
+    });
+  }
+
+  // 3) throttle con requestAnimationFrame (non ricalcolare a ogni pixel)
+  let ticking = false;
+  function onScroll() {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        lightWords();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", lightWords);
+  lightWords(); // stato iniziale
+}
+
 // CURSORE
 const cursor = document.querySelector(".cursor");
 
@@ -53,30 +117,3 @@ if (contactTrigger && contactOverlay) {
     if (e.key === "Escape") closeContact();
   });
 }
-
-
-// WORK ACCORDION — apre/chiude le strisce progetto (una alla volta)
-const workItems = document.querySelectorAll(".work-item");
-
-workItems.forEach((item) => {
-  const head = item.querySelector(".work-item__head");
-  const toggle = item.querySelector(".work-item__toggle");
-
-  head.addEventListener("click", () => {
-    const wasOpen = item.classList.contains("is-open");
-
-    // chiudi tutte (apertura singola)
-    workItems.forEach((other) => {
-      other.classList.remove("is-open");
-      other
-        .querySelector(".work-item__toggle")
-        .setAttribute("aria-expanded", "false");
-    });
-
-    // se non era già aperta, aprila
-    if (!wasOpen) {
-      item.classList.add("is-open");
-      toggle.setAttribute("aria-expanded", "true");
-    }
-  });
-});

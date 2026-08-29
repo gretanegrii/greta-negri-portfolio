@@ -1,0 +1,60 @@
+.case-study__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+h1 a {
+  font-size: 9rem;
+  line-height: 0.8;
+  text-decoration: none;
+  color: inherit;
+}
+
+.case-study__meta {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.case-study__lead {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.case-study__summary {
+  font-size: 3rem;
+  line-height: 1;
+  text-align: center;
+}
+
+.case-study__section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2rem;
+}
+
+.case-study__section > * {
+  grid-column: 2;
+}
+
+.case-study__section h2 {
+  font-size: 2rem;
+}
+
+.case-study__section p {
+  font-size: 1rem;
+}
+
+/* ---- ENTRANCE al caricamento: intro e hero entrano in cascata ---- */
+.case-study__intro {
+  animation: rise 1s ease both;
+  animation-delay: 0.05s;
+}
+.case-study__media--hero {
+  animation: rise 1s ease both;
+  animation-delay: 0.2s;
+}
