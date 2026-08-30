@@ -3,3 +3,7 @@
 
 # Editor
 .vscode/
+
+# Video sorgenti pesanti (nel repo va solo l'mp4 compresso in assets/video/)
+*.mov
+*.MOV

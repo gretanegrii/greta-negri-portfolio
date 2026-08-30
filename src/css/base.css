@@ -7,24 +7,8 @@
   --color-pink-medium: #f19ac9;
   --dot-color: var(--color-pink);
   --dot-halo: rgba(255, 79, 163, 0.5);
-  --font-main: "Switzer", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-main: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --indent: 8.75rem;
-}
-
-/* -------------------------------------------FONTS------------------------------------------- */
-@font-face {
-  font-family: "Switzer";
-  src: url("../../assets/fonts/Switzer-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Switzer";
-  src: url("../../assets/fonts/Switzer-Medium.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
 }
 
 /* -------------------------------------------RESET------------------------------------------- */

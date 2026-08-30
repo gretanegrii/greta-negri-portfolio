@@ -117,3 +117,7 @@ if (contactTrigger && contactOverlay) {
     if (e.key === "Escape") closeContact();
   });
 }
+
+
+
+document.querySelector('video').playbackRate = 1.5;
