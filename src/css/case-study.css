@@ -7,10 +7,9 @@
   margin-top: 3rem;
 }
 
-h1 a {
-  font-size: 9rem;
+h1 {
+  font-size: clamp(3.5rem, 9vw, 9rem);
   line-height: 0.8;
-  text-decoration: none;
   color: inherit;
 }
 
@@ -18,6 +17,27 @@ h1 a {
   font-size: 1rem;
   font-weight: 500;
   text-transform: uppercase;
+}
+
+/* LINKS */
+.case-study__links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+.case-study__links a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.case-study__links a:hover {
+  color: var(--color-pink);
 }
 
 .case-study__lead {
@@ -30,7 +50,9 @@ h1 a {
   font-size: 3rem;
   font-weight: 500;
   line-height: 1;
-  text-align: center;
+  text-align: left;
+  text-indent: 2em;
+  margin-bottom: 5rem;
 }
 
 .case-study__section {
@@ -39,16 +61,163 @@ h1 a {
   column-gap: 2rem;
 }
 
+/* riga nera spessa solo sopra "Il mio ruolo", allineata alla colonna destra (i testi) */
+.case-study__section:first-of-type h2 {
+  border-top: 3px solid var(--color-text);
+  padding-top: 2rem;
+}
+
 .case-study__section > * {
   grid-column: 2;
 }
 
 .case-study__section h2 {
   font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 .case-study__section p {
   font-size: 1rem;
+  margin-bottom: 4rem;
+  line-height: 1.2;
+}
+
+/* OUTCOME */
+.case-study__spec--outcome {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2rem;
+}
+
+.case-study__spec--outcome > * {
+  grid-column: 2;
+}
+
+.case-study__spec--outcome .case-study__spec-label {
+  display: none;
+}
+
+.case-study__spec--outcome p {
+  border-top: 3px solid var(--color-text);
+  padding-top: 2rem;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.05;
+  margin-bottom: 4rem;
+}
+
+/* MEDIA */
+.case-study__media {
+  margin-top: 2rem;
+  margin-bottom: 7rem;
+}
+
+/* canvas Figma: più piccolo e centrato */
+.case-study__media--figma {
+  max-width: 80%;
+  margin-inline: auto;
+}
+
+/* mockup MacBook: più piccolo e centrato, non a piena larghezza */
+.case-study__media--macbook {
+  max-width: 75%;
+  margin-inline: auto;
+}
+
+/* MOCKUP iPhone: 3 affiancati, sfondo trasparente → niente placeholder né ombra */
+.case-study__mockups {
+  margin-top: 2rem;
+  margin-bottom: 7rem;
+  max-width: 78%; /* un filo più grossi, centrati */
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+  align-items: start;
+}
+.case-study__mockups img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+@media (max-width: 700px) {
+  .case-study__mockups {
+    gap: 0.75rem;
+  }
+}
+
+/* DESIGN SYSTEM: tipografia sopra + composizione colori sotto */
+.case-study__ds {
+  margin-top: 2rem;
+  margin-bottom: 7rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* tipografia | colori affiancati */
+  gap: 2rem;
+  align-items: start;
+}
+.case-study__ds img {
+  width: 100%;
+  height: auto;
+  display: block; /* immagini trasparenti: niente ombra né placeholder */
+}
+/* colori: paper largo sopra · brick alto a destra · ink + ink-soft sotto-sinistra */
+.case-study__ds-colors {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+.case-study__ds-paper {
+  grid-column: 1 / 3;
+  grid-row: 1;
+}
+.case-study__ds-brick {
+  grid-column: 3;
+  grid-row: 1 / 3;
+}
+.case-study__ds-ink {
+  grid-column: 1;
+  grid-row: 2;
+}
+.case-study__ds-ink-soft {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+/* su mobile: tipografia e colori si impilano */
+@media (max-width: 700px) {
+  .case-study__ds {
+    grid-template-columns: 1fr;
+  }
+  .case-study__ds-colors {
+    grid-template-columns: 1fr 1fr;
+  }
+  /* sinistra: paper → ink → ink-soft impilati · destra: brick alto */
+  .case-study__ds-paper {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .case-study__ds-ink {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .case-study__ds-ink-soft {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  .case-study__ds-brick {
+    grid-column: 2;
+    grid-row: 1 / 4;
+  }
+}
+
+.case-study__media video,
+.case-study__media img {
+  width: 100%;
+  height: auto; /* rapporto naturale → il contenuto NON viene tagliato */
+  display: block;
+  background: #e9e6df; /* placeholder mentre il video carica */
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 /* ---- ENTRANCE al caricamento: intro e hero entrano in cascata ---- */
@@ -59,4 +228,39 @@ h1 a {
 .case-study__media--hero {
   animation: rise 1s ease both;
   animation-delay: 0.2s;
+}
+
+/* =========================================================
+   RESPONSIVE — sotto 1024px (iPad e telefono): colonna singola
+   ========================================================= */
+@media (max-width: 1024px) {
+  .case-study__lead,
+  .case-study__summary {
+    font-size: 2rem;
+  }
+  .case-study__summary {
+    text-indent: 0;
+  }
+
+  /* sezioni + outcome: da 2 colonne a colonna singola, testo pieno */
+  .case-study__section,
+  .case-study__spec--outcome {
+    grid-template-columns: 1fr;
+  }
+  .case-study__section > *,
+  .case-study__spec--outcome > * {
+    grid-column: 1;
+  }
+
+  /* media a tutta larghezza */
+  .case-study__media--figma,
+  .case-study__media--macbook,
+  .case-study__mockups {
+    max-width: 100%;
+  }
+
+  /* design system: tipografia e colori si impilano */
+  .case-study__ds {
+    grid-template-columns: 1fr;
+  }
 }

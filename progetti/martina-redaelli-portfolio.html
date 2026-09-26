@@ -12,7 +12,10 @@
     <meta name="author" content="Greta Negri" />
 
     <link rel="icon" type="image/png" href="../assets/img/icons/favicon.png" />
-    <link rel="apple-touch-icon" href="../assets/img/icons/apple-touch-icon.png" />
+    <link
+      rel="apple-touch-icon"
+      href="../assets/img/icons/apple-touch-icon.png"
+    />
 
     <link rel="stylesheet" href="../src/css/base.css" />
     <link rel="stylesheet" href="../src/css/case-study.css" />
@@ -41,31 +44,42 @@
 
     <main>
       <article>
-        <div class="case-study__intro">
-          <h1>
-            <a href="https://martinaredaelli.vercel.app/"
-              >Martina Redaelli portfolio d'artista</a
-            >
-          </h1>
-          <p class="case-study__meta">
-            2026 / Art Direction, UI/UX, Front-End Development
-          </p>
-          <p class="case-study__lead">
-            Un sito-portfolio per Martina Redaelli, artista concettuale,
-            scrittrice e curatrice. Un unico spazio che tiene insieme i suoi tre
-            lati (opere, saggi e curatela) in un catalogo digitale bilingue
-            (italiano / inglese).
-          </p>
-        </div>
+        <div class="case-study__hero">
+          <div class="case-study__intro">
+            <h1>Martina Redaelli portfolio d'artista</h1>
+            <p class="case-study__meta">
+              2026 / Art Direction, UI/UX, Front-End Development
+            </p>
+            <p class="case-study__links">
+              <a
+                href="https://martinaredaelli.vercel.app/"
+                target="_blank"
+                rel="noopener"
+                >guarda il sito ↗</a
+              >
+              <a
+                href="https://github.com/gretanegrii/martina-redaelli-portfolio"
+                target="_blank"
+                rel="noopener"
+                >guarda il codice ↗</a
+              >
+            </p>
+            <p class="case-study__lead">
+              Un sito-portfolio per Martina Redaelli, artista concettuale,
+              scrittrice e curatrice. Un unico spazio che tiene insieme i suoi
+              tre lati in un catalogo digitale bilingue.
+            </p>
+          </div>
 
-        <div class="case-study__media case-study__media--hero">
-          <video
-            autoplay
-            muted
-            loop
-            playsinline
-            src="../assets/video/martina-redaelli.mp4"
-          ></video>
+          <div class="case-study__media case-study__media--hero">
+            <video
+              autoplay
+              muted
+              loop
+              playsinline
+              src="../assets/video/martina-redaelli.mp4"
+            ></video>
+          </div>
         </div>
 
         <p class="case-study__summary">
@@ -84,6 +98,51 @@
           </p>
         </section>
 
+        <!-- Figma: il canvas con tutte le artboard del progetto -->
+        <div class="case-study__media case-study__media--figma">
+          <img
+            src="../assets/img/martina-redaelli/figma-mockup.jpg"
+            alt="Il file Figma del portfolio di Martina Redaelli: tutte le artboard del progetto"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- design system: tipografia + composizione colori -->
+        <div class="case-study__ds">
+          <img
+            class="case-study__ds-type"
+            src="../assets/img/martina-redaelli/ds-typography.png"
+            alt="Sistema tipografico del sito di Martina Redaelli"
+            loading="lazy"
+          />
+          <div class="case-study__ds-colors">
+            <img
+              class="case-study__ds-paper"
+              src="../assets/img/martina-redaelli/ds-paper.png"
+              alt="Colore paper #F7F5F0"
+              loading="lazy"
+            />
+            <img
+              class="case-study__ds-brick"
+              src="../assets/img/martina-redaelli/ds-brick.png"
+              alt="Colore brick #9E4635"
+              loading="lazy"
+            />
+            <img
+              class="case-study__ds-ink"
+              src="../assets/img/martina-redaelli/ds-ink.png"
+              alt="Colore ink #141414"
+              loading="lazy"
+            />
+            <img
+              class="case-study__ds-ink-soft"
+              src="../assets/img/martina-redaelli/ds-ink-soft.png"
+              alt="Colore ink-soft #6B6B6B"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
         <section class="case-study__section">
           <h2>Una hero "silenziosa" in apertura</h2>
           <p>
@@ -96,8 +155,16 @@
           </p>
         </section>
 
-        <!-- immagine -->
-        <!-- <div class="case-study__media">video / immagine</div> -->
+        <!-- video: la hero silenziosa scrollata, in un mockup MacBook -->
+        <div class="case-study__media case-study__media--macbook">
+          <video
+            autoplay
+            muted
+            loop
+            playsinline
+            src="../assets/video/martina-redaelli-silent-hero.mp4"
+          ></video>
+        </div>
 
         <section class="case-study__section">
           <h2>Tre attività, nessuna gerarchia</h2>
@@ -107,6 +174,25 @@
             viene prima degli altri.
           </p>
         </section>
+
+        <!-- 3 mockup iPhone: Lavori · Saggi · Mostre, affiancati -->
+        <div class="case-study__mockups">
+          <img
+            src="../assets/img/martina-redaelli/mockup-work.png"
+            alt="Il sito di Martina Redaelli su iPhone: la sezione Lavori"
+            loading="lazy"
+          />
+          <img
+            src="../assets/img/martina-redaelli/mockup-essays.png"
+            alt="Il sito di Martina Redaelli su iPhone: la sezione Saggi"
+            loading="lazy"
+          />
+          <img
+            src="../assets/img/martina-redaelli/mockup-exhibitions.png"
+            alt="Il sito di Martina Redaelli su iPhone: la sezione Mostre"
+            loading="lazy"
+          />
+        </div>
 
         <section class="case-study__section">
           <h2>La pagina fa da cornice ai lavori, senza distrazioni</h2>
@@ -140,32 +226,11 @@
         </section>
 
         <!-- 8 · OUTCOMES -->
-        <div class="case-study__spec">
+        <div class="case-study__spec case-study__spec--outcome">
           <h2 class="case-study__spec-label">Outcomes</h2>
           <p>
             Il mio primo progetto per un cliente reale, e il primo JavaScript
             interattivo serio che ho scritto mentre iniziavo a studiarlo.
-          </p>
-        </div>
-
-        <!-- 9 · LINK -->
-        <div class="case-study__spec">
-          <h2 class="case-study__spec-label">Link</h2>
-          <p>
-            Live:
-            <a
-              href="https://martinaredaelli.vercel.app/"
-              target="_blank"
-              rel="noopener"
-              >martinaredaelli.vercel.app</a
-            >
-            · Repo:
-            <a
-              href="https://github.com/gretanegrii/martina-redaelli-portfolio"
-              target="_blank"
-              rel="noopener"
-              >github.com/gretanegrii/martina-redaelli-portfolio</a
-            >
           </p>
         </div>
       </article>

@@ -7,3 +7,6 @@
 # Video sorgenti pesanti (nel repo va solo l'mp4 compresso in assets/video/)
 *.mov
 *.MOV
+
+# Materiale grezzo (registrazioni, export Figma/PSD) — nel sito va solo il compresso in assets/
+resources/

@@ -46,7 +46,8 @@ h2 a:hover {
   text-shadow: 0 0 16px rgba(255, 79, 163, 0.5);
 }
 
-video {
+video,
+.work-item img {
   width: 60%;
   aspect-ratio: 16 / 9;
   object-fit: contain;
@@ -99,7 +100,8 @@ footer {
     font-size: 0.75rem;
   }
 
-  video {
+  video,
+  .work-item img {
     width: 60%;
   }
 }
@@ -124,7 +126,8 @@ footer {
     padding-inline: 1rem;
   }
 
-  video {
+  video,
+  .work-item img {
     width: 99vw;
   }
 }
