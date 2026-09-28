@@ -70,10 +70,14 @@
   display: block;
 }
 
-.link-list a:hover,
-.link-list button:hover {
-  color: var(--color-pink);
-  text-shadow: 0 0 16px rgba(255, 79, 163, 0.5);
+/* hover solo su dispositivi con mouse vero: su touch (iOS) l'hover
+   causava il "primo tap non naviga, serve il secondo tap" */
+@media (hover: hover) and (pointer: fine) {
+  .link-list a:hover,
+  .link-list button:hover {
+    color: var(--color-pink);
+    text-shadow: 0 0 16px rgba(255, 79, 163, 0.5);
+  }
 }
 
 /* -------------------------------------------INDEX------------------------------------------- */
@@ -157,8 +161,10 @@
 }
 
 /* hover: si illumina come i link */
-.contact-overlay__close:hover {
-  text-shadow: 0 0 16px var(--color-pink-light);
+@media (hover: hover) and (pointer: fine) {
+  .contact-overlay__close:hover {
+    text-shadow: 0 0 16px var(--color-pink-light);
+  }
 }
 
 .contact-overlay__intro {
@@ -190,8 +196,10 @@
   transition: text-shadow 0.2s ease;
 }
 
-.contact-overlay .contact a:hover {
-  text-shadow: 0 0 16px var(--color-pink-light);
+@media (hover: hover) and (pointer: fine) {
+  .contact-overlay .contact a:hover {
+    text-shadow: 0 0 16px var(--color-pink-light);
+  }
 }
 
 /* ============================================================= */

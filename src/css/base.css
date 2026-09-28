@@ -113,8 +113,10 @@ header p {
   transition: color 0.2s ease;
 }
 
-.breadcrumb a:hover {
-  color: var(--color-pink);
+@media (hover: hover) and (pointer: fine) {
+  .breadcrumb a:hover {
+    color: var(--color-pink);
+  }
 }
 
 /* -------------------------------------------CURSORE------------------------------------------- */

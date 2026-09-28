@@ -41,9 +41,11 @@ h2 a {
     text-shadow 0.2s ease;
 }
 
-h2 a:hover {
-  color: var(--color-pink);
-  text-shadow: 0 0 16px rgba(255, 79, 163, 0.5);
+@media (hover: hover) and (pointer: fine) {
+  h2 a:hover {
+    color: var(--color-pink);
+    text-shadow: 0 0 16px rgba(255, 79, 163, 0.5);
+  }
 }
 
 video,

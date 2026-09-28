@@ -36,8 +36,10 @@ h1 {
   transition: color 0.2s ease;
 }
 
-.case-study__links a:hover {
-  color: var(--color-pink);
+@media (hover: hover) and (pointer: fine) {
+  .case-study__links a:hover {
+    color: var(--color-pink);
+  }
 }
 
 .case-study__lead {
