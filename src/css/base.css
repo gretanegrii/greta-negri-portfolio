@@ -241,3 +241,102 @@ html.lenis body {
     display: none;
   }
 }
+
+/* =========================================================
+   MENU MOBILE (hamburger) — solo pagine interne, iniettato via JS
+   riusa l'estetica della tendina rosa "contatti"
+   ========================================================= */
+.mobile-nav-toggle,
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  /* pulsante hamburger fisso in alto a destra */
+  .mobile-nav-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    position: fixed;
+    top: 1.1rem;
+    right: 1.1rem;
+    width: 44px;
+    height: 44px;
+    padding: 0 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 9000;
+  }
+  .mobile-nav-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--color-text);
+  }
+
+  /* la tendina rosa (stessa logica di .contact-overlay) */
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background: var(--color-pink-medium);
+    color: var(--color-pink);
+    padding: 5rem 2rem 3rem;
+    transform: translateY(100%);
+    transition: transform 0.6s cubic-bezier(0.7, 0, 0.3, 1);
+    overflow-y: auto;
+  }
+  .mobile-menu.is-open {
+    transform: translateY(0);
+  }
+
+  .mobile-menu__close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    border: none;
+    background: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .mobile-menu__nav,
+  .mobile-menu__contact {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .mobile-menu__nav {
+    gap: 1rem;
+  }
+  .mobile-menu__nav a {
+    color: inherit;
+    text-decoration: underline;
+    font-size: 3rem;
+    line-height: 1;
+    letter-spacing: -0.015em;
+    font-weight: 500;
+  }
+  .mobile-menu__contact {
+    gap: 0.4rem;
+  }
+  .mobile-menu__contact a {
+    color: inherit;
+    text-decoration: underline;
+    font-size: 1.15rem;
+    font-weight: 500;
+  }
+}

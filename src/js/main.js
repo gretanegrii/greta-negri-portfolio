@@ -122,3 +122,52 @@ if (contactTrigger && contactOverlay) {
 
 const heroVideo = document.querySelector('video');
 if (heroVideo) heroVideo.playbackRate = 1.5;
+
+/* ---- MENU MOBILE (hamburger) — solo sulle pagine interne (hanno il breadcrumb) ---- */
+if (document.querySelector(".breadcrumb")) {
+  const toggle = document.createElement("button");
+  toggle.className = "mobile-nav-toggle";
+  toggle.type = "button";
+  toggle.setAttribute("aria-label", "Apri menu");
+  toggle.innerHTML = "<span></span><span></span><span></span>";
+
+  const menu = document.createElement("nav");
+  menu.className = "mobile-menu";
+  menu.setAttribute("aria-label", "Menu");
+  menu.setAttribute("aria-hidden", "true");
+  menu.innerHTML = `
+    <button class="mobile-menu__close" type="button" aria-label="Chiudi menu">chiudi</button>
+    <ul class="mobile-menu__nav">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/about.html">Chi sono</a></li>
+      <li><a href="/work.html">Lavori</a></li>
+    </ul>
+    <ul class="mobile-menu__contact">
+      <li><a href="/assets/docs/cv.pdf" target="_blank" rel="noopener">CV</a></li>
+      <li><a href="https://github.com/gretanegrii" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://linkedin.com/in/gretanegri" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="mailto:gretanegri.dev@gmail.com">gretanegri.dev@gmail.com</a></li>
+    </ul>
+  `;
+
+  document.body.appendChild(toggle);
+  document.body.appendChild(menu);
+
+  const openMenu = () => {
+    menu.classList.add("is-open");
+    menu.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  };
+  const closeMenu = () => {
+    menu.classList.remove("is-open");
+    menu.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  };
+
+  toggle.addEventListener("click", openMenu);
+  menu.querySelector(".mobile-menu__close").addEventListener("click", closeMenu);
+  menu.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeMenu));
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
+  });
+}
