@@ -281,5 +281,10 @@
   .hero .link-list--index ul {
     align-items: center;
     margin-top: 0;
+    gap: 0.9rem; /* zona di sicurezza tra i link su touch */
+  }
+  .link-list--index a,
+  .link-list--index button {
+    line-height: 1.3; /* tap target più alto */
   }
 }

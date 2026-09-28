@@ -120,4 +120,5 @@ if (contactTrigger && contactOverlay) {
 
 
 
-document.querySelector('video').playbackRate = 1.5;
+const heroVideo = document.querySelector('video');
+if (heroVideo) heroVideo.playbackRate = 1.5;
