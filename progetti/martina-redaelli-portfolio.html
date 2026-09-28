@@ -77,7 +77,7 @@
               muted
               loop
               playsinline
-              src="../assets/video/martina-redaelli.mp4"
+              src="../assets/video/martina-redaelli/walkthrough.mp4"
             ></video>
           </div>
         </div>
@@ -98,49 +98,20 @@
           </p>
         </section>
 
-        <!-- Figma: il canvas con tutte le artboard del progetto -->
-        <div class="case-study__media case-study__media--figma">
+        <!-- Figma canvas + design system, affiancati -->
+        <div class="case-study__figma-ds">
           <img
-            src="../assets/img/martina-redaelli/figma-mockup.jpg"
+            class="case-study__figma-canvas"
+            src="../assets/img/martina-redaelli/figma-canvas.jpg"
             alt="Il file Figma del portfolio di Martina Redaelli: tutte le artboard del progetto"
             loading="lazy"
           />
-        </div>
-
-        <!-- design system: tipografia + composizione colori -->
-        <div class="case-study__ds">
           <img
-            class="case-study__ds-type"
-            src="../assets/img/martina-redaelli/ds-typography.png"
-            alt="Sistema tipografico del sito di Martina Redaelli"
+            class="case-study__design-system"
+            src="../assets/img/martina-redaelli/design-system.jpg"
+            alt="Design system del sito di Martina Redaelli: tipografia e palette colori"
             loading="lazy"
           />
-          <div class="case-study__ds-colors">
-            <img
-              class="case-study__ds-paper"
-              src="../assets/img/martina-redaelli/ds-paper.png"
-              alt="Colore paper #F7F5F0"
-              loading="lazy"
-            />
-            <img
-              class="case-study__ds-brick"
-              src="../assets/img/martina-redaelli/ds-brick.png"
-              alt="Colore brick #9E4635"
-              loading="lazy"
-            />
-            <img
-              class="case-study__ds-ink"
-              src="../assets/img/martina-redaelli/ds-ink.png"
-              alt="Colore ink #141414"
-              loading="lazy"
-            />
-            <img
-              class="case-study__ds-ink-soft"
-              src="../assets/img/martina-redaelli/ds-ink-soft.png"
-              alt="Colore ink-soft #6B6B6B"
-              loading="lazy"
-            />
-          </div>
         </div>
 
         <section class="case-study__section">
@@ -162,7 +133,7 @@
             muted
             loop
             playsinline
-            src="../assets/video/martina-redaelli-silent-hero.mp4"
+            src="../assets/video/martina-redaelli/silent-hero.mp4"
           ></video>
         </div>
 
@@ -178,18 +149,8 @@
         <!-- 3 mockup iPhone: Lavori · Saggi · Mostre, affiancati -->
         <div class="case-study__mockups">
           <img
-            src="../assets/img/martina-redaelli/mockup-work.png"
-            alt="Il sito di Martina Redaelli su iPhone: la sezione Lavori"
-            loading="lazy"
-          />
-          <img
-            src="../assets/img/martina-redaelli/mockup-essays.png"
-            alt="Il sito di Martina Redaelli su iPhone: la sezione Saggi"
-            loading="lazy"
-          />
-          <img
-            src="../assets/img/martina-redaelli/mockup-exhibitions.png"
-            alt="Il sito di Martina Redaelli su iPhone: la sezione Mostre"
+            src="../assets/img/martina-redaelli/mockup-activities.jpg"
+            alt="Il sito di Martina Redaelli su iPhone: le sezioni Lavori, Saggi e Mostre affiancate"
             loading="lazy"
           />
         </div>
@@ -197,18 +158,19 @@
         <section class="case-study__section">
           <h2>La pagina fa da cornice ai lavori, senza distrazioni</h2>
           <p>
-            Sfondo chiaro, testo nero, una tipografia editoriale che decora quel
-            tanto che basta. La pagina fa da cornice ai lavori senza rubare la
-            scena all'opera.
+            Sfondo chiaro, testo nero, tipografia editoriale. Nelle pagine-opera
+            l'immagine è protagonista, ma non da sola: il testo che l'accompagna
+            ha quasi lo stesso peso, e il respiro della pagina serve a tenerli
+            in equilibrio.
           </p>
         </section>
 
         <section class="case-study__section">
           <h2>Bilingue, perché l'arte lo è</h2>
           <p>
-            Tutto il sito è in italiano e inglese con un toggle di lingua —
-            perché il mondo dell'arte è internazionale, e il portfolio doveva
-            poterci parlare.
+            Tutto il sito è in italiano e inglese, con un toggle che scambia i
+            testi senza ricaricare la pagina. Perché il mondo dell'arte è
+            internazionale, e il portfolio doveva poterci parlare.
           </p>
         </section>
 
@@ -218,12 +180,27 @@
         <section class="case-study__section">
           <h2>Scritto a mano, senza framework</h2>
           <p>
-            Design in Figma; sviluppo in HTML, CSS e JavaScript vanilla, senza
-            framework. Colori e tipografia gestiti con token CSS. Il visore
-            delle opere — navigazione tra le immagini, zoom, controllo da
-            tastiera, accessibilità — è in JavaScript. Sito statico su Vercel.
+            Design in Figma; sviluppo da zero in HTML, CSS e JavaScript vanilla,
+            senza framework. Colori e tipografia gestiti con token CSS. Le parti
+            interattive sono scritte a mano in JavaScript: il visore delle opere
+            (navigazione tra le immagini e zoom) e l'accordion della home, ad
+            apertura singola, animato con grid-template-rows per una transizione
+            morbida. È stato il primo JavaScript interattivo che ho scritto,
+            mentre lo stavo ancora imparando: senza framework, stato ed eventi
+            li ho gestiti a mano.
           </p>
         </section>
+
+        <!-- video: il visore delle opere, in un MacBook frontale -->
+        <div class="case-study__media case-study__media--macbook">
+          <video
+            autoplay
+            muted
+            loop
+            playsinline
+            src="../assets/video/martina-redaelli/viewer.mp4"
+          ></video>
+        </div>
 
         <!-- 8 · OUTCOMES -->
         <div class="case-study__spec case-study__spec--outcome">

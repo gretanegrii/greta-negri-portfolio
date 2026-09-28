@@ -61,7 +61,7 @@ h1 {
   column-gap: 2rem;
 }
 
-/* riga nera spessa solo sopra "Il mio ruolo", allineata alla colonna destra (i testi) */
+/* riga nera spessa */
 .case-study__section:first-of-type h2 {
   border-top: 3px solid var(--color-text);
   padding-top: 2rem;
@@ -80,6 +80,12 @@ h1 {
   font-size: 1rem;
   margin-bottom: 4rem;
   line-height: 1.2;
+}
+
+/* paragrafi multipli nella stessa sezione: spazio ridotto tra loro
+   (l'ultimo mantiene i 4rem verso il media/sezione successiva) */
+.case-study__section p:not(:last-of-type) {
+  margin-bottom: 1.5rem;
 }
 
 /* OUTCOME */
@@ -108,32 +114,46 @@ h1 {
 
 /* MEDIA */
 .case-study__media {
-  margin-top: 2rem;
+  margin-top: 0;
   margin-bottom: 7rem;
 }
 
-/* canvas Figma: più piccolo e centrato */
+/* hero: più spazio tra il testo lead e il video */
+.case-study__media--hero {
+  margin-top: 3rem;
+}
+
+/* mockup Figma: a piena larghezza, come il video hero */
 .case-study__media--figma {
-  max-width: 80%;
+  max-width: 100%;
   margin-inline: auto;
+}
+
+/* canvas Figma + design system affiancati (due colonne) */
+.case-study__figma-ds {
+  margin-top: 0;
+  margin-bottom: 7rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  align-items: start;
+}
+.case-study__figma-ds img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* mockup MacBook: più piccolo e centrato, non a piena larghezza */
 .case-study__media--macbook {
-  max-width: 75%;
+  max-width: 100%;
   margin-inline: auto;
 }
 
 /* MOCKUP iPhone: 3 affiancati, sfondo trasparente → niente placeholder né ombra */
 .case-study__mockups {
-  margin-top: 2rem;
+  margin-top: 0;
   margin-bottom: 7rem;
-  max-width: 78%; /* un filo più grossi, centrati */
-  margin-inline: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 4rem;
-  align-items: start;
 }
 .case-study__mockups img {
   width: 100%;
@@ -146,21 +166,20 @@ h1 {
   }
 }
 
-/* DESIGN SYSTEM: tipografia sopra + composizione colori sotto */
 .case-study__ds {
   margin-top: 2rem;
   margin-bottom: 7rem;
   display: grid;
-  grid-template-columns: 1fr 1fr; /* tipografia | colori affiancati */
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
   align-items: start;
 }
 .case-study__ds img {
   width: 100%;
   height: auto;
-  display: block; /* immagini trasparenti: niente ombra né placeholder */
+  display: block;
 }
-/* colori: paper largo sopra · brick alto a destra · ink + ink-soft sotto-sinistra */
+
 .case-study__ds-colors {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -261,6 +280,11 @@ h1 {
 
   /* design system: tipografia e colori si impilano */
   .case-study__ds {
+    grid-template-columns: 1fr;
+  }
+
+  /* canvas Figma + design system: si impilano */
+  .case-study__figma-ds {
     grid-template-columns: 1fr;
   }
 }
