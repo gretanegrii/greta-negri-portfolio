@@ -125,6 +125,7 @@ if (heroVideo) heroVideo.playbackRate = 1.5;
 
 /* ---- MENU MOBILE (hamburger) — solo sulle pagine interne (hanno il breadcrumb) ---- */
 if (document.querySelector(".breadcrumb")) {
+  document.body.classList.add("is-inner");
   const toggle = document.createElement("button");
   toggle.className = "mobile-nav-toggle";
   toggle.type = "button";

@@ -258,6 +258,11 @@ html.lenis body {
     display: none;
   }
 
+  /* pagine interne: via i testi dell'header, resta solo l'hamburger */
+  .is-inner header {
+    display: none;
+  }
+
   /* pulsante hamburger fisso in alto a destra */
   .mobile-nav-toggle {
     display: flex;
@@ -266,7 +271,8 @@ html.lenis body {
     gap: 6px;
     position: fixed;
     top: 1.1rem;
-    right: 1.1rem;
+    left: 50%;
+    transform: translateX(-50%);
     width: 44px;
     height: 44px;
     padding: 0 8px;

@@ -255,9 +255,29 @@ h1 {
    RESPONSIVE — sotto 1024px (iPad e telefono): colonna singola
    ========================================================= */
 @media (max-width: 1024px) {
+  /* gerarchia dei titoli su mobile + tablet:
+     titolo > (meta = link impilati) > testo lead */
+  h1 {
+    font-size: clamp(2.2rem, 6.5vw, 4rem);
+  }
+  .case-study__meta {
+    font-size: clamp(1.25rem, 2.8vw, 1.6rem);
+  }
+  .case-study__links {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: clamp(1.25rem, 2.8vw, 1.6rem);
+  }
+  .case-study__section h2 {
+    font-size: clamp(1.3rem, 3vw, 1.75rem);
+  }
+  .case-study__spec--outcome p {
+    font-size: clamp(1.3rem, 3vw, 1.75rem);
+  }
   .case-study__lead,
   .case-study__summary {
-    font-size: 2rem;
+    font-size: clamp(1rem, 1.8vw, 1.15rem);
   }
   .case-study__summary {
     text-indent: 0;
@@ -288,22 +308,5 @@ h1 {
   /* canvas Figma + design system: si impilano */
   .case-study__figma-ds {
     grid-template-columns: 1fr;
-  }
-}
-
-/* -------- MOBILE: tipografia più contenuta -------- */
-@media (max-width: 600px) {
-  h1 {
-    font-size: clamp(2.2rem, 9vw, 3rem);
-  }
-  .case-study__lead,
-  .case-study__summary {
-    font-size: 1.4rem;
-  }
-  .case-study__section h2 {
-    font-size: 1.5rem;
-  }
-  .case-study__spec--outcome p {
-    font-size: 1.5rem;
   }
 }
