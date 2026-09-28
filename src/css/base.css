@@ -252,6 +252,12 @@ html.lenis body {
 }
 
 @media (max-width: 600px) {
+  /* su mobile il breadcrumb è sostituito dall'hamburger (l'HTML resta
+     perché serve a iniettare il menu, qui lo nascondo solo) */
+  .breadcrumb {
+    display: none;
+  }
+
   /* pulsante hamburger fisso in alto a destra */
   .mobile-nav-toggle {
     display: flex;
@@ -324,7 +330,7 @@ html.lenis body {
   }
   .mobile-menu__nav a {
     color: inherit;
-    text-decoration: underline;
+    text-decoration: none;
     font-size: 3rem;
     line-height: 1;
     letter-spacing: -0.015em;
