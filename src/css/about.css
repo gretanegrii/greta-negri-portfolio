@@ -96,7 +96,7 @@ footer p {
 }
 
 /* ============================================================= */
-/* --- RESPONSIVE (desktop-first) --- */
+/* --- RESPONSIVE --- */
 /* ============================================================= */
 
 /* -------------------------------------------TABLET------------------------------------------- */
@@ -113,6 +113,10 @@ footer p {
 
 /* -------------------------------------------MOBILE------------------------------------------- */
 @media (max-width: 600px) {
+  .about {
+    margin-top: 5rem;
+  }
+
   .about__name :is(h1, p),
   .about__intro,
   .about__facts dt {
@@ -127,5 +131,9 @@ footer p {
   .about__facts {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+
+  .mobile-nav-toggle span {
+    background-color: var(--color-pink);
   }
 }

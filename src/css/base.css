@@ -258,6 +258,10 @@ html.lenis body {
     display: none;
   }
 
+  .is-inner main {
+    padding-top: 5rem; /* respiro sotto l'hamburger fisso, su tutte le pagine interne */
+  }
+
   /* pagine interne: via i testi dell'header, resta solo l'hamburger */
   .is-inner header {
     display: none;
@@ -281,6 +285,7 @@ html.lenis body {
     cursor: pointer;
     z-index: 9000;
   }
+
   .mobile-nav-toggle span {
     display: block;
     width: 100%;
