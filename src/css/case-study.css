@@ -275,11 +275,12 @@ h1 {
   .case-study__spec--outcome p {
     font-size: clamp(1.3rem, 3vw, 1.75rem);
   }
-  .case-study__lead,
-  .case-study__summary {
-    font-size: clamp(1rem, 1.8vw, 1.15rem);
+  /* il lead ha la stessa scala della riga meta (2026 / Art Direction…) */
+  .case-study__lead {
+    font-size: clamp(1.25rem, 2.8vw, 1.6rem);
   }
   .case-study__summary {
+    font-size: clamp(1rem, 1.8vw, 1.15rem);
     text-indent: 0;
   }
 
