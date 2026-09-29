@@ -28,6 +28,12 @@ h1 {
   font-size: 1rem;
 }
 
+/* chiusura in fondo al case study: respiro sopra e sotto */
+.case-study__links--end {
+  margin-top: 3rem;
+  margin-bottom: 7rem;
+}
+
 .case-study__links a {
   color: inherit;
   text-decoration: underline;
