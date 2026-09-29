@@ -51,12 +51,9 @@ h2 a {
 video,
 .work-item img {
   width: 60%;
-  aspect-ratio: 16 / 9;
-  object-fit: contain;
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+  height: auto; /* rapporto naturale → niente barre nere, niente distorsione */
   display: block;
-  object-fit: fill;
-  background: black;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.12);
 }
 
 .work-item + .work-item {
@@ -130,6 +127,6 @@ footer {
 
   video,
   .work-item img {
-    width: 99vw;
+    width: 100%;
   }
 }
