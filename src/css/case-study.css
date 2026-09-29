@@ -16,7 +16,7 @@ h1 {
 
 .case-study__meta {
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 700;
   text-transform: uppercase;
 }
 
@@ -50,7 +50,7 @@ h1 {
 
 .case-study__lead {
   font-size: 3rem;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1;
 }
 
@@ -332,6 +332,14 @@ h1 {
    Su desktop restano la chiusura in fondo (regola --end sopra).
    ========================================================= */
 @media (max-width: 600px) {
+  /* video hero un filo più alto: ritaglia i lati (grigi) non il monitor,
+     così il testo sotto non sbircia appena apri la pagina */
+  .case-study__media--hero video {
+    aspect-ratio: 1.25 / 1;
+    height: auto;
+    object-fit: cover;
+  }
+
   .case-study__links--end {
     position: fixed;
     top: 1.1rem;
