@@ -31,7 +31,7 @@ h1 {
 
 h2 {
   font-size: clamp(2rem, 11vw, 8rem);
-  margin-bottom: 0.35rem;
+  margin-bottom: 1.25rem; /* desktop: il titolo è grande, serve stacco dalla sottolineatura */
   text-underline-offset: 0.2em;
 }
 
@@ -114,6 +114,7 @@ footer {
 
   .work-item h2 {
     font-size: 2.7rem;
+    margin-bottom: 0.35rem; /* su mobile il titolo è piccolo: descrizione vicina */
   }
 
   .work-item p {
