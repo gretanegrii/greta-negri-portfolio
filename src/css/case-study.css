@@ -265,7 +265,7 @@ h1 {
   /* gerarchia dei titoli su mobile + tablet:
      titolo > (meta = link impilati) > testo lead */
   h1 {
-    font-size: clamp(2.9rem, 9vw, 5.5rem);
+    font-size: clamp(3.4rem, 10.5vw, 6rem);
   }
   .case-study__meta {
     font-size: clamp(1.25rem, 2.8vw, 1.6rem);
