@@ -4,7 +4,14 @@ const prefersReducedMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)",
 ).matches;
 
-if (typeof Lenis !== "undefined" && !prefersReducedMotion) {
+// dispositivo con mouse vero (desktop)? Su touch (telefono/tablet) NON attiviamo
+// né lo smooth scroll di Lenis né il cursore custom: intercettavano il primo tap
+// (micro-scroll + hover sintetico) e facevano aprire il link sbagliato / al 2° tap.
+const isFinePointer = window.matchMedia(
+  "(hover: hover) and (pointer: fine)",
+).matches;
+
+if (typeof Lenis !== "undefined" && !prefersReducedMotion && isFinePointer) {
   const lenis = new Lenis({
     duration: 1.2, // durata dello scivolamento: più alto = più "lungo"
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // decelerazione morbida
@@ -62,33 +69,33 @@ if (revealTexts.length && !prefersReducedMotion) {
   lightWords(); // stato iniziale
 }
 
-// CURSORE
+// CURSORE — solo su desktop (mouse). Su touch resta inerte: gli eventi mouse
+// sintetici di iOS al primo tap ingrandivano il cursore e bloccavano il tap.
 const cursor = document.querySelector(".cursor");
 
-let mouseX = 0, mouseY = 0;
-let curX = 0, curY = 0;
+if (cursor && isFinePointer) {
+  let mouseX = 0, mouseY = 0;
+  let curX = 0, curY = 0;
 
-window.addEventListener("mousemove", (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-});
+  window.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
 
-function animateCursor() {
-  curX += (mouseX - curX) * 0.15;
-  curY += (mouseY - curY) * 0.15;
-  cursor.style.left = curX + "px";
-  cursor.style.top = curY + "px";
-  requestAnimationFrame(animateCursor);
+  function animateCursor() {
+    curX += (mouseX - curX) * 0.15;
+    curY += (mouseY - curY) * 0.15;
+    cursor.style.left = curX + "px";
+    cursor.style.top = curY + "px";
+    requestAnimationFrame(animateCursor);
+  }
+  animateCursor();
+
+  document.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("mouseenter", () => cursor.classList.add("cursor--hover"));
+    link.addEventListener("mouseleave", () => cursor.classList.remove("cursor--hover"));
+  });
 }
-animateCursor();
-
-
-const links = document.querySelectorAll("a");
-
-links.forEach((link) => {
-  link.addEventListener("mouseenter", () => cursor.classList.add("cursor--hover"));
-  link.addEventListener("mouseleave", () => cursor.classList.remove("cursor--hover"));
-});
 
 
 // CONTACT OVERLAY — apre il pannello fucsia dal link "Contatti" del menu
