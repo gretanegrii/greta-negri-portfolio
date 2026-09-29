@@ -8,7 +8,9 @@
 }
 
 h1 {
-  font-size: clamp(4rem, 11vw, 11rem);
+  /* desktop: ~8vw tiene il titolo su due righe (MARTINA REDAELLI /
+     PORTFOLIO D'ARTISTA) invece di quattro */
+  font-size: clamp(5rem, 8vw, 12rem);
   line-height: 0.8;
   color: inherit;
   text-transform: uppercase;
