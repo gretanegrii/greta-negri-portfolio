@@ -280,7 +280,7 @@ h1 {
     font-size: clamp(1.25rem, 2.8vw, 1.6rem);
   }
   .case-study__summary {
-    font-size: clamp(1rem, 1.8vw, 1.15rem);
+    font-size: clamp(1.25rem, 2.8vw, 1.6rem);
     text-indent: 0;
   }
 
