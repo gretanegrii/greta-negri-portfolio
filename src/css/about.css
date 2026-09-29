@@ -113,8 +113,10 @@ footer p {
 
 /* -------------------------------------------MOBILE------------------------------------------- */
 @media (max-width: 600px) {
+  /* il padding-top di .is-inner main dà già lo spazio sotto l'hamburger;
+     qui solo un filo d'aria extra per chi-sono */
   .about {
-    margin-top: 5rem;
+    margin-top: 3rem;
   }
 
   .about__name :is(h1, p),
