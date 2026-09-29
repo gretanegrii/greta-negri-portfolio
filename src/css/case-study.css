@@ -16,7 +16,7 @@ h1 {
 
 .case-study__meta {
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 500;
   text-transform: uppercase;
 }
 
@@ -51,7 +51,7 @@ h1 {
 
 .case-study__lead {
   font-size: 3rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1;
 }
 
@@ -273,6 +273,7 @@ h1 {
   }
   .case-study__meta {
     font-size: clamp(1.25rem, 2.8vw, 1.6rem);
+    font-weight: 700;
   }
   .case-study__links {
     flex-direction: column;
@@ -296,6 +297,7 @@ h1 {
   /* il lead ha la stessa scala della riga meta (2026 / Art Direction…) */
   .case-study__lead {
     font-size: clamp(1.25rem, 2.8vw, 1.6rem);
+    font-weight: 400;
   }
   /* summary: grande e con la prima riga rientrata (come il riferimento).
      il text-indent: 2em lo eredita dal desktop, qui non lo azzero più */
