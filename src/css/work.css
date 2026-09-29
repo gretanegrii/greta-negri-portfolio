@@ -26,12 +26,12 @@ h1 {
 
 .work-item p {
   margin-bottom: 1rem;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 h2 {
   font-size: clamp(2rem, 11vw, 8rem);
-  margin-bottom: 1rem;
+  margin-bottom: 0.35rem;
   text-underline-offset: 0.2em;
 }
 
