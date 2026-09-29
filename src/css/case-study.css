@@ -276,8 +276,15 @@ h1 {
     gap: 0.3rem;
     font-size: clamp(1rem, 2vw, 1.15rem);
   }
+  /* sezioni: titoli più grandi (già bold 700) e corpo medium più arioso */
   .case-study__section h2 {
-    font-size: clamp(1.3rem, 3vw, 1.75rem);
+    font-size: clamp(1.9rem, 6.5vw, 2.5rem);
+    line-height: 1.05;
+  }
+  .case-study__section p {
+    font-size: 1.0625rem;
+    font-weight: 500;
+    line-height: 1.4;
   }
   .case-study__spec--outcome p {
     font-size: clamp(1.3rem, 3vw, 1.75rem);
