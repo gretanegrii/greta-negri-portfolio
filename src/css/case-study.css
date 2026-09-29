@@ -312,4 +312,10 @@ h1 {
   .case-study__figma-ds {
     grid-template-columns: 1fr;
   }
+
+  /* video hero: stessa distanza sopra e sotto → avvicina il summary
+     (sopra il video sono 3rem, quindi anche sotto 3rem invece dei 7rem) */
+  .case-study__media--hero {
+    margin-bottom: 3rem;
+  }
 }
