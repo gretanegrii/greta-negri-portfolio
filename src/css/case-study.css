@@ -279,9 +279,11 @@ h1 {
   .case-study__lead {
     font-size: clamp(1.25rem, 2.8vw, 1.6rem);
   }
+  /* summary: grande e con la prima riga rientrata (come il riferimento).
+     il text-indent: 2em lo eredita dal desktop, qui non lo azzero più */
   .case-study__summary {
-    font-size: clamp(1.25rem, 2.8vw, 1.6rem);
-    text-indent: 0;
+    font-size: clamp(2rem, 7.5vw, 2.6rem);
+    line-height: 1.05;
   }
 
   /* sezioni + outcome: da 2 colonne a colonna singola, testo pieno */
